@@ -146,8 +146,9 @@ func (p *Proxy) makeHandler(up upstream) http.HandlerFunc {
 				req.Header.Set(h, v)
 			}
 		}
-		// Set origin to look like a browser request from our domain
-		req.Header.Set("Origin", "https://lux.exchange")
+		// Uniswap API requires app.uniswap.org origin
+		req.Header.Set("Origin", "https://app.uniswap.org")
+		req.Header.Set("Referer", "https://app.uniswap.org/")
 
 		resp, err := p.client.Do(req)
 		if err != nil {

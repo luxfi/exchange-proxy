@@ -1,0 +1,6 @@
+FROM alpine:3.20
+RUN apk add --no-cache ca-certificates
+COPY exchange-proxy-linux /usr/local/bin/exchange-proxy
+EXPOSE 8088
+ENTRYPOINT ["exchange-proxy"]
+CMD ["-addr", ":8088"]
