@@ -1,4 +1,4 @@
-# LLM.md - Hanzo Exchange Proxy
+# Hanzo Exchange Proxy
 
 ## Overview
 Go module: github.com/luxfi/exchange-proxy
